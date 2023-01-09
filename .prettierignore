@@ -1,0 +1,3 @@
+.svelte-kit/
+.turbo/
+node_modules/

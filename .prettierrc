@@ -1,0 +1,14 @@
+{
+  "semi": false,
+  "proseWrap": "always",
+  "printWidth": 90,
+  "pluginSearchDirs": ["."],
+  "overrides": [
+    {
+      "files": "*.svelte",
+      "options": {
+        "parser": "svelte"
+      }
+    }
+  ]
+}

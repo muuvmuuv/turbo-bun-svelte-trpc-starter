@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <title>Starter</title>
+
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' %apiUrl%;" />
+
+  <link rel="preconnect" href="%apiUrl%" crossorigin />
+  <link rel="dns-prefetch" href="%apiUrl%" />
+
+  %sveltekit.head%
+
+</head>
+
+<body data-sveltekit-preload-data="hover">
+  <div style="display:contents">%sveltekit.body%</div>
+</body>
+
+</html>

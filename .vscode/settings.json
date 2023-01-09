@@ -1,0 +1,4 @@
+{
+  "eslint.probe": ["javascript", "typescript", "svelte"],
+  "cSpell.words": ["trpc"]
+}
