@@ -1,60 +1,60 @@
 /* eslint-disable no-undef */
+/* eslint-disable sonarjs/no-duplicate-string */
 /* eslint-disable unicorn/prefer-module */
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: [
-    "eslint:recommended",
-    "plugin:sonarjs/recommended",
-    "plugin:unicorn/recommended",
-    "turbo",
-  ],
-  plugins: ["simple-import-sort"],
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-  },
-  rules: {
-    "simple-import-sort/imports": [
-      "error",
-      {
-        groups: [["^\\u0000", "^node:"], ["^@?\\w"], ["^", "^src"], ["^\\."]],
-      },
-    ],
-    "simple-import-sort/exports": "error",
-    "no-constant-condition": "error",
-    "no-unused-expressions": "error",
-    "no-unreachable": "error",
-    "no-cond-assign": "error",
-    "no-sequences": "error",
-  },
-  overrides: [
-    {
-      files: ["*.ts"],
-      parser: "@typescript-eslint/parser",
-      plugins: ["tsdoc", "@typescript-eslint"],
-      extends: [
-        "plugin:@typescript-eslint/recommended",
-        // "plugin:@typescript-eslint/strict",
-      ],
-      rules: {
-        "tsdoc/syntax": "error",
-      },
-    },
-    {
-      files: ["*.svelte"],
-      plugins: ["svelte3"],
-      processor: "svelte3/svelte3",
-      settings: {
-        "svelte3/typescript": () => require("typescript"),
-      },
-      env: {
-        browser: true,
-      },
-    },
-    {
-      files: ["*"],
-      extends: ["prettier"],
-    },
-  ],
+	extends: [
+		"eslint:recommended",
+		"plugin:sonarjs/recommended",
+		"plugin:unicorn/recommended",
+		"turbo",
+	],
+	parserOptions: {
+		ecmaVersion: "latest",
+		sourceType: "module",
+		extraFileExtensions: [".svelte"],
+	},
+	rules: {
+		"no-constant-condition": "error",
+		"no-unused-expressions": "error",
+		"no-unreachable": "error",
+		"no-cond-assign": "error",
+		"no-sequences": "error",
+	},
+	ignorePatterns: [
+		"**/node_modules/**",
+		"**/build/**",
+		"**/.turbo/**",
+		"**/.svelte-kit/**",
+	],
+	overrides: [
+		{
+			files: ["*.ts", "*.svelte"],
+			extends: [
+				"plugin:@typescript-eslint/recommended",
+				"plugin:@typescript-eslint/strict",
+			],
+			parserOptions: {
+				project: ["tsconfig.json", "tsconfig.app.json"],
+			},
+			rules: {},
+		},
+		{
+			files: ["*.svelte"],
+			extends: ["plugin:svelte/recommended", "plugin:svelte/prettier"],
+			parser: "svelte-eslint-parser",
+			parserOptions: {
+				parser: "@typescript-eslint/parser",
+			},
+			env: {
+				browser: true,
+			},
+			rules: {},
+		},
+		{
+			files: "*",
+			extends: ["prettier"],
+		},
+	],
 }

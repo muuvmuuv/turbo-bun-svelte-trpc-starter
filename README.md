@@ -7,6 +7,7 @@ everything you want.
 ## Stack
 
 - Bun
+- bun:test
 - tRPC
 - Svelte
 - SvelteKit
@@ -15,5 +16,6 @@ everything you want.
 - Playwright
 - Turborepo
 - pnpm
+- pnpm-workspaces
 - eslint
 - prettier

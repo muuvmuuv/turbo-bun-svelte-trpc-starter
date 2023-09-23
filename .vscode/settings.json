@@ -1,4 +1,11 @@
 {
-  "eslint.probe": ["javascript", "typescript", "svelte"],
-  "cSpell.words": ["trpc"]
+	"editor.rulers": [90],
+	"html.format.enable": true,
+	"html.format.wrapAttributes": "preserve-aligned",
+	"eslint.options": {
+		"extensions": [".js", ".ts", ".svelte"]
+	},
+	"eslint.validate": ["javascript", "typescript", "svelte"],
+	"eslint.probe": ["javascript", "typescript", "svelte"],
+	"cSpell.words": ["trpc"]
 }
